@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PediaTrack — Cuidado y Salud Infantil Organizados en Familia</title>
+  <meta name="description" content="PediaTrack organiza el cuidado de tus hijos: dosis y tratamientos compartidos en tiempo real, registro express con fotos y audio, turnos médicos con dudas pendientes y resúmenes para el pediatra." />
+  
+  <link rel="icon" type="image/x-icon" href="images/logo.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+
+  <!-- ================================================================
+       NAVBAR
+       ================================================================ -->
+  <header class="pt-navbar">
+    <div class="container navbar-container">
+      <a href="#inicio" class="navbar-brand">
+        <img src="images/logo_nombre.png" alt="PediaTrack" class="brand-logo-img" />
+        <span class="brand-beta-tag">🚀 Beta Privada</span>
+      </a>
+
+      <nav>
+        <ul class="navbar-links" id="navbarLinks">
+          <li><a href="#familias" class="nav-link">Funcionalidades</a></li>
+          <li><a href="#consultas" class="nav-link">Turnos & Estudios</a></li>
+          <li><a href="#profesionales" class="nav-link">Para Médicos</a></li>
+          <li><a href="#seguridad" class="nav-link">Seguridad</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar-actions">
+        <a href="encuesta.html" class="btn-cta-nav">
+          <span class="nav-btn-text-desktop">Solicitar Acceso 🚀</span>
+          <span class="nav-btn-text-mobile">Acceso 🚀</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================================
+       HERO SECTION
+       ================================================================ -->
+  <section id="inicio" class="hero-section">
+    <div class="container">
+      
+      <!-- Audience Switcher (Pill) -->
+      <div class="audience-switcher-wrap">
+        <div class="audience-switcher">
+          <button type="button" class="audience-btn active" id="tabFamilias">
+            👨‍👩‍👧‍👦 Para Familias
+          </button>
+          <button type="button" class="audience-btn" id="tabMedicos">
+            🩺 Para Médicos y Pediatras
+          </button>
+        </div>
+      </div>
+
+      <!-- HERO FAMILIAS -->
+      <div class="hero-grid" id="heroFamilias">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">✦ Ecosistema Clínico & Familiar</span>
+          <h1 class="hero-title">
+            El cuidado de tus hijos,<br>
+            <span class="text-gradient">siempre organizado</span><br>
+            y cerca tuyo.
+          </h1>
+          <p class="hero-description">
+            Cuidar a tus hijos cuando están enfermos no debería ser un caos de mensajes y dudas. Registrá síntomas con fotos y audios, coordiná tratamientos en tiempo real entre cuidadores, llevá el ciclo completo de órdenes médicas y llegá a cada consulta pediátrica con la información exacta que el médico necesita.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="encuesta.html" class="btn-primary-hero">
+              Solicitar Acceso a la Beta Privada →
+            </a>
+            <a href="#familias" class="btn-secondary-hero">
+              Ver funcionalidades ↓
+            </a>
+          </div>
+
+          <div class="hero-badges">
+            <div class="hero-badge-item">
+              <span class="check">✓</span> 3 meses de Plan Familiar gratis
+            </div>
+            <div class="hero-badge-item">
+              <span class="check">✓</span> Sin tarjeta requerida
+            </div>
+            <div class="hero-badge-item">
+              <span class="check">✓</span> Diseñado junto a pediatras
+            </div>
+          </div>
+        </div>
+
+        <!-- Mockup Familiar (CSS puro) -->
+        <div class="mockup-wrap">
+          <div class="mockup-card">
+            <div class="mockup-header-bar">
+              <div class="mockup-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="mockup-app-title">PediaTrack — Panel Familiar</span>
+            </div>
+
+            <!-- Perfil Niño -->
+            <div class="child-profile-card">
+              <div class="child-avatar-info">
+                <span class="child-avatar">👶</span>
+                <div>
+                  <div class="child-name">Mateo Benítez <span style="font-weight: 500; color: var(--text-muted);">(11 meses)</span></div>
+                  <div class="child-sub">Familia Benítez Rossi</div>
+                </div>
+              </div>
+              <span class="blood-badge">🩸 0 RH+</span>
+            </div>
+
+            <!-- Tratamiento Activo Sincronizado -->
+            <div class="mockup-treatment-pill">
+              <div class="treatment-header">
+                <div class="treatment-name">💊 Cefalexina 250mg</div>
+                <span class="treatment-status">En curso</span>
+              </div>
+              <div class="treatment-sub">Día 3 de 7 — Próxima toma: 16:00 hs (Mamá avisada)</div>
+            </div>
+
+            <!-- Síntoma Express Registrado -->
+            <div class="mockup-symptom-pill">
+              <div class="symptom-tag-row">
+                <span class="symptom-tag-label">📝 Síntoma Express</span>
+                <span class="symptom-badge-status">Pendiente de consulta</span>
+              </div>
+              <div class="symptom-detail">🌡️ Fiebre 38.4°C y tos seca — 04:20 AM</div>
+              <div class="symptom-meta">🎙️ Audio adjunto (0:14s) · 📸 2 Fotos guardadas</div>
+            </div>
+
+            <!-- Cobertura -->
+            <div class="mockup-footer-insurance">
+              <div>
+                <span style="color: var(--text-subtle);">💳 Cobertura:</span>
+                <strong style="color: var(--text-heading); margin-left: 4px;">OSDE 210</strong>
+              </div>
+              <span class="insurance-status">✓ Activa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO MÉDICOS (Oculto por defecto) -->
+      <div class="hero-grid" id="heroMedicos" style="display: none;">
+        <div class="hero-copy">
+          <span class="hero-eyebrow hero-eyebrow-pro">🩺 Red Médica & Pediatras Aliados</span>
+          <h1 class="hero-title">
+            Tu reputación clínica,<br>
+            <span class="text-gradient-pro">presente donde las<br>familias te buscan.</span>
+          </h1>
+          <p class="hero-description">
+            Unite a la red de profesionales con matrícula verificada. Recibí resúmenes clínicos ordenados de tus pacientes en 15 segundos antes de entrar a consulta y publicá tus consultorios y vías de contacto para que las familias puedan encontrarte fácilmente en la app.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="encuesta.html" class="btn-primary-hero btn-pro-hero">
+              Sumarme como Pediatra Aliado →
+            </a>
+            <a href="#profesionales" class="btn-secondary-hero">
+              Ver beneficios profesionales ↓
+            </a>
+          </div>
+
+          <div class="hero-badges">
+            <div class="hero-badge-item">
+              <span class="check" style="color: var(--pt-pro);">✓</span> Verificación de matrícula 100% gratuita
+            </div>
+            <div class="hero-badge-item">
+              <span class="check" style="color: var(--pt-pro);">✓</span> Resumen temporal para consultas
+            </div>
+            <div class="hero-badge-item">
+              <span class="check" style="color: var(--pt-pro);">✓</span> Sedes y consultorios ilimitados
+            </div>
+          </div>
+        </div>
+
+        <!-- Mockup Profesional (CSS puro) -->
+        <div class="mockup-wrap">
+          <div class="mockup-card">
+            <div class="mockup-header-bar">
+              <div class="mockup-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="mockup-app-title">PediaTrack — Consultorio Pro</span>
+            </div>
+
+            <!-- Perfil Médico -->
+            <div class="doctor-header-card">
+              <span class="doctor-avatar-icon">🩺</span>
+              <div>
+                <div class="doctor-name-row">
+                  <div class="doctor-name">Dra. Mariana Valenzuela</div>
+                  <span class="doctor-seal">✓ Verificada</span>
+                </div>
+                <div class="doctor-spec">Pediatría Clínica & Neonatología</div>
+                <div class="doctor-license">MN 142.890 · MP 55.432</div>
+              </div>
+            </div>
+
+            <!-- Consultorio y Turnos WhatsApp -->
+            <div class="doctor-clinic-card">
+              <div class="clinic-title-row">
+                <span class="clinic-name">Sanatorio Pediátrico Central — Cons. 304</span>
+                <span class="clinic-badge">Lun · Mié 14-19hs</span>
+              </div>
+              <div class="clinic-address">Av. Santa Fe 3200, CABA · OSDE, Swiss Medical, Galeno</div>
+              <span class="btn-clinic-wa">
+                📞 Contacto: +54 9 11 5555-1234
+              </span>
+            </div>
+
+            <!-- Highlight Resumen Clínico -->
+            <div class="doctor-highlight-box">
+              <strong>📄 Resumen Pre-Consulta:</strong> Las familias comparten una ficha temporal con dosis reales y curva térmica de los últimos 7 días. Ahorrá minutos de anamnesis en cada cita.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================================
+       TRUST BAR
+       ================================================================ -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <span class="trust-icon">🌐</span>
+          <div>
+            <div class="trust-title">Estándares OMS</div>
+            <div class="trust-sub">Curvas de crecimiento y calendarios</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🛡️</span>
+          <div>
+            <div class="trust-title">Privado por diseño</div>
+            <div class="trust-sub">Datos de menores 100% blindados</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🩺</span>
+          <div>
+            <div class="trust-title">Matrículas Validadas</div>
+            <div class="trust-sub">Auditoría en colegios médicos</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🔒</span>
+          <div>
+            <div class="trust-title">Totalmente Anónimo</div>
+            <div class="trust-sub">Sin metadatos en fotos ni audios</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       BENTO GRID: FUNCIONALIDADES CLÍNICAS Y FAMILIARES
+       ================================================================ -->
+  <section id="familias" class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Ecosistema Pediátrico</span>
+        <h2 class="section-title">Diseñado para los momentos de mayor incertidumbre</h2>
+        <p class="section-subtitle">
+          Cada función fue pensada junto a familias y médicos para eliminar el estrés cuando un chico se siente mal: ágil, claro y coordinado.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        
+        <!-- CARD 1: Registro Express con Audio y Fotos (Grande - 2 col) -->
+        <div class="bento-card col-span-2 highlight-blue">
+          <div class="bento-icon">🎙️</div>
+          <h3 class="bento-title">Registro Express: Audios, Fotos y Fiebre a las 3 AM</h3>
+          <p class="bento-desc">
+            Cuando un síntoma aparece de madrugada, no hay tiempo de llenar formularios complicados. Grabá una nota de voz con el sonido de la tos o la respiración, sacale una foto nítida a la erupción en la piel y registrá la temperatura con hora exacta en un solo toque. Todo queda fechado y listo para mostrarle al pediatra.
+          </p>
+          <span class="bento-tag">✓ Audios de tos · Fotos sin metadatos · Curva de temperatura</span>
+        </div>
+
+        <!-- CARD 2: Turnos con 'Modo Consulta' y dudas pendientes (Chica - 1 col) -->
+        <div class="bento-card highlight" id="consultas">
+          <div class="bento-icon">📅</div>
+          <h3 class="bento-title">Turnos Futuros con "Modo Consulta"</h3>
+          <p class="bento-desc">
+            ¿Te pasó de salir del consultorio y darte cuenta de que olvidaste preguntarle algo importante al doctor? Al agendar un turno futuro, PediaTrack reúne automáticamente todas las dudas, síntomas o registros marcados como <em>Pendiente de consulta</em> para que entres con un checklist infalible.
+          </p>
+          <span class="bento-tag">✓ Checklist automático de dudas</span>
+        </div>
+
+        <!-- CARD 3: Compartir con el Doctor (Chica - 1 col) -->
+        <div class="bento-card">
+          <div class="bento-icon">📤</div>
+          <h3 class="bento-title">Compartir con el Doctor: PDF en 15s o App-to-App</h3>
+          <p class="bento-desc">
+            Generá una ficha cronológica clara en PDF para mostrársela al pediatra o enviársela por WhatsApp antes de entrar a consulta. O compartila de forma directa y cifrada dentro de la app si el profesional ya forma parte de la red de PediaTrack.
+          </p>
+          <span class="bento-tag">✓ Exportación instantánea</span>
+        </div>
+
+        <!-- CARD 4: Ciclo Completo de Estudios y Recetas (Grande - 2 col) -->
+        <div class="bento-card col-span-2 highlight">
+          <div class="bento-icon">📄</div>
+          <h3 class="bento-title">Ciclo Completo de Estudios & Recetas: De la Orden al Resultado</h3>
+          <p class="bento-desc">
+            Subí la foto o PDF de la receta u orden médica que te dio el doctor. Cuando el laboratorio, centro de diagnóstico o sanatorio te entrega los resultados (análisis de sangre, ecografías, placas), volvés sobre ese mismo registro y adjuntás el informe final. Tené todo el circuito cerrado en un solo lugar sin perder papeles ni órdenes vencidas.
+          </p>
+          <span class="bento-tag">✓ Orden y resultado vinculados · PDFs centralizados</span>
+        </div>
+
+        <!-- CARD 5: Dosis y Tratamientos Sincronizados -->
+        <div class="bento-card">
+          <div class="bento-icon">⏱️</div>
+          <h3 class="bento-title">Dosis Sincronizadas entre Cuidadores</h3>
+          <p class="bento-desc">
+            Cálculo horario de cada toma y progreso día a día. Si mamá le dio el antitérmico a las 14:00, papá y los abuelos lo ven de inmediato en su celular. Cero dudas de "¿le diste vos o le doy yo?" y cero sobredosis accidentales.
+          </p>
+          <span class="bento-tag">✓ Notificaciones en tiempo real</span>
+        </div>
+
+        <!-- CARD 6: Botiquín Inteligente -->
+        <div class="bento-card">
+          <div class="bento-icon">💊</div>
+          <h3 class="bento-title">Botiquín Digital & Vencimientos</h3>
+          <p class="bento-desc">
+            Buscá por principio activo (Ibuprofeno, Paracetamol, Amoxicilina) o por síntoma. Sabé qué medicamentos tenés en casa, su última dosis indicada y recibí alertas antes de que venzan.
+          </p>
+          <span class="bento-tag">✓ Control de stock y caducidad</span>
+        </div>
+
+        <!-- CARD 7: Vacunas Oficiales & Curvas OMS -->
+        <div class="bento-card">
+          <div class="bento-icon">💉</div>
+          <h3 class="bento-title">Vacunas Oficiales & Curvas OMS</h3>
+          <p class="bento-desc">
+            Calendarios oficiales de vacunación regional con alertas de próximas dosis y gráficos interactivos de percentiles de peso, talla y perímetro cefálico basados en la Organización Mundial de la Salud.
+          </p>
+          <span class="bento-tag">✓ Percentiles OMS · Calendario</span>
+        </div>
+
+        <!-- CARD 8: Ficha de Emergencia 1-Tap (Full Width) -->
+        <div class="bento-card col-span-3 emergency-bento-card">
+          <div class="emergency-left">
+            <span class="emergency-icon">🚨</span>
+            <div>
+              <h3 class="emergency-title">Ficha de Emergencia 1-Tap para Guardias</h3>
+              <p class="emergency-desc">
+                Credencial digital de alta visibilidad para situaciones críticas: grupo sanguíneo, alergias severas destacadas en rojo, contactos de emergencia y credenciales de obra social accesibles con un solo toque desde la pantalla principal.
+              </p>
+            </div>
+          </div>
+          <div>
+            <a href="encuesta.html" class="btn-emergency-cta">
+              Asegurar mi lugar en la Beta →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECCIÓN PROFESIONALES Y RED MÉDICA
+       ================================================================ -->
+  <section id="profesionales" class="features-section" style="background-color: #ffffff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow" style="background: var(--pt-pro-light); color: var(--pt-pro);">Red Médica Verificada</span>
+        <h2 class="section-title">Para Pediatras y Profesionales de la Salud Infantil</h2>
+        <p class="section-subtitle">
+          Herramientas pensadas para jerarquizar tu práctica médica, ahorrar tiempo en consulta y ordenar la comunicación con tus pacientes.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-card">
+          <div class="bento-icon">🩺</div>
+          <h3 class="bento-title">Sello de Matrícula Verificada</h3>
+          <p class="bento-desc">
+            Validamos tu matrícula nacional o provincial en los registros oficiales. Obtené el sello oficial <strong>✓ Verificado 🩺</strong> que brinda máxima confianza y credibilidad a las familias de tu región.
+          </p>
+          <span class="bento-tag" style="color: var(--pt-pro); background: var(--pt-pro-light);">✓ Auditoría colegiada gratuita</span>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon">🏥</div>
+          <h3 class="bento-title">Sedes & Canales de Contacto</h3>
+          <p class="bento-desc">
+            Publicá tus consultorios de atención con días, horarios, coberturas médicas recibidas y vías directas de contacto para que las familias puedan encontrarte fácilmente en la app si lo desean.
+          </p>
+          <span class="bento-tag" style="color: var(--pt-pro); background: var(--pt-pro-light);">✓ Presencia médica en tu zona</span>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon">⏱️</div>
+          <h3 class="bento-title">Resúmenes Clínicos en 15 Segundos</h3>
+          <p class="bento-desc">
+            Los pacientes llegan con la evolución térmica, medicamentos administrados y audios o fotos ya registrados. Leé la anamnesis en 15 segundos y dedicate al examen físico y diagnóstico.
+          </p>
+          <span class="bento-tag" style="color: var(--pt-pro); background: var(--pt-pro-light);">✓ Ahorro de tiempo en consulta</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       SEGURIDAD & LEGAL
+       ================================================================ -->
+  <section id="seguridad" class="security-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Marco Ético & Seguridad</span>
+        <h2 class="section-title">La privacidad y tranquilidad de tu familia están blindadas</h2>
+        <p class="section-subtitle">
+          Cumplimiento riguroso de principios internacionales de protección de datos de salud y de menores de edad.
+        </p>
+      </div>
+
+      <!-- Descargo Médico Obligatorio -->
+      <div class="medical-disclaimer-card">
+        <span class="disclaimer-icon">⚠️</span>
+        <div>
+          <h4 class="disclaimer-title">Descargo de Responsabilidad Médica</h4>
+          <p class="disclaimer-text">
+            <strong>PediaTrack es una herramienta de asistencia organizativa, registro familiar y recordatorio de salud.</strong> En ningún caso calcula dosis automáticas, ni prescribe fármacos, ni reemplaza el criterio, diagnóstico o consulta periódica con un médico pediatra matriculado. Ante cualquier síntoma agudo, urgencia o emergencia médica, acudí inmediatamente a la guardia hospitalaria más cercana o comunicate con las líneas de auxilio locales.
+          </p>
+        </div>
+      </div>
+
+      <div class="security-pillars-grid">
+        <div class="security-pillar-card">
+          <div class="pillar-icon">🛡️</div>
+          <h4 class="pillar-title">Privacidad de Menores</h4>
+          <p class="pillar-desc">Cero exposición pública de datos clínicos de niños. La información y registros son estrictamente privados dentro del grupo familiar.</p>
+        </div>
+        <div class="security-pillar-card">
+          <div class="pillar-icon">🧹</div>
+          <h4 class="pillar-title">Sin Metadatos</h4>
+          <p class="pillar-desc">Toda foto o archivo subido es limpiado automáticamente de datos de geolocalización (GPS) y datos técnicos del dispositivo para proteger tu hogar.</p>
+        </div>
+        <div class="security-pillar-card">
+          <div class="pillar-icon">📜</div>
+          <h4 class="pillar-title">Derecho al Olvido</h4>
+          <p class="pillar-desc">Sos el único dueño de tu información. Podés descargar tu historial completo en cualquier momento o solicitar la eliminación total de tus datos en 1 clic.</p>
+        </div>
+        <div class="security-pillar-card">
+          <div class="pillar-icon">🔒</div>
+          <h4 class="pillar-title">Cifrado de Extremo a Extremo</h4>
+          <p class="pillar-desc">Toda la información viaja protegida mediante protocolos seguros TLS 1.3 con almacenamiento segmentado y trazabilidad de accesos autorizados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       PREGUNTAS FRECUENTES (FAQ)
+       ================================================================ -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Preguntas Frecuentes</span>
+        <h2 class="section-title">¿Tenés dudas? Te las respondemos</h2>
+        <p class="section-subtitle">Todo lo que necesitás saber sobre la Beta Privada y el lanzamiento de PediaTrack.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary class="faq-question">¿Qué es la Beta Privada y cómo obtengo los 3 meses gratis?</summary>
+          <div class="faq-answer">
+            La Beta Privada es la etapa previa al lanzamiento oficial donde invitaremos a un grupo exclusivo de familias y pediatras para probar la plataforma y ayudarnos a perfeccionarla. Al completar la solicitud de 90 segundos, tu lugar queda reservado en la lista de espera y recibirás automáticamente <strong>3 meses de Plan Familiar 100% gratis</strong> cuando se habilite la beta.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">¿Tengo que ingresar tarjeta de crédito o pagar algo?</summary>
+          <div class="faq-answer">
+            No, en absoluto. La solicitud a la Beta Privada es 100% gratuita y no solicitamos ninguna tarjeta ni medio de pago.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">¿Puedo usar PediaTrack desde mi teléfono celular?</summary>
+          <div class="faq-answer">
+            Sí. PediaTrack está diseñado con tecnología web progresiva (PWA) e interfaces optimizadas para celulares (Android e iOS), tabletas y computadoras, funcionando de manera fluida y adaptada a cualquier pantalla.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">¿Puedo compartir el cuidado de mi hijo con mi pareja, abuelos o niñera?</summary>
+          <div class="faq-answer">
+            Sí, esa es una de las grandes fortalezas de PediaTrack. Podés invitar a todos los cuidadores de tu Grupo Familiar para que vean en tiempo real qué dosis se administró, quién la dio y qué indicaciones dejó el médico.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Soy pediatra o profesional de la salud, ¿cómo participo?</summary>
+          <div class="faq-answer">
+            En la solicitud podés elegir el rol <em>Profesional de la Salud</em>. Nuestro equipo verificará tu matrícula para otorgarte el sello de verificación oficial y darte acceso prioritario a la publicación de tus consultorios y vías de contacto.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">¿En qué etapa está PediaTrack y cuándo podré probar la app?</summary>
+          <div class="faq-answer">
+            PediaTrack se encuentra actualmente en fase de <strong>desarrollo activo y pruebas técnicas internas</strong> de seguridad, privacidad y confiabilidad. Al registrarte hoy, tu familia queda anotada con prioridad en la lista de espera oficial: nos comunicaremos con vos por WhatsApp o correo electrónico en cuanto iniciemos la convocatoria de la Beta Privada para enviarte tu invitación exclusiva junto a tus 3 meses gratis.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       CTA BANNER FINAL
+       ================================================================ -->
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-card">
+        <span class="cta-banner-badge">🚀 Cupos Limitados · Lanzamiento Próximo</span>
+        <h2 class="cta-banner-title">
+          Construyamos juntos la forma más tranquila de cuidar a los chicos
+        </h2>
+        <p class="cta-banner-desc">
+          Sumate a la lista de espera para la Beta Privada. Completá una breve solicitud de 90 segundos para reservar tu lugar prioritario y asegurate 3 meses gratis del Plan Familiar.
+        </p>
+        <a href="encuesta.html" class="btn-cta-giant">
+          Comenzar Solicitud de Acceso (90 seg) →
+        </a>
+        <div class="cta-banner-footnote">
+          🔒 Tus datos serán tratados con total confidencialidad exclusivamente para coordinar tu acceso a la beta.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FOOTER
+       ================================================================ -->
+  <footer class="pt-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="images/logo_nombre.png" alt="PediaTrack" class="footer-brand-logo" />
+          <p class="footer-desc">
+            Asistente digital de salud pediátrica para familias y profesionales. Cuidado coordinado, trazable y seguro.
+          </p>
+          <div style="font-size: 0.78rem; color: #475569;">© 2026 PediaTrack. Todos los derechos reservados.</div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Familias</h4>
+          <ul class="footer-links">
+            <li><a href="#familias" class="footer-link">Registro Express</a></li>
+            <li><a href="#consultas" class="footer-link">Turnos & Dudas</a></li>
+            <li><a href="#familias" class="footer-link">Estudios y Recetas</a></li>
+            <li><a href="#familias" class="footer-link">Botiquín Digital</a></li>
+            <li><a href="#familias" class="footer-link">Vacunas & Curvas OMS</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Profesionales</h4>
+          <ul class="footer-links">
+            <li><a href="#profesionales" class="footer-link">Red Médica Aliada</a></li>
+            <li><a href="#profesionales" class="footer-link">Verificación Colegiada</a></li>
+            <li><a href="#profesionales" class="footer-link">Sedes & Consultorios</a></li>
+            <li><a href="encuesta.html" class="footer-link">Sumarme a la Red</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Seguridad & Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#seguridad" class="footer-link">Privacidad de Menores</a></li>
+            <li><a href="#seguridad" class="footer-link">Descargo Médico</a></li>
+            <li><a href="#seguridad" class="footer-link">Cifrado y Datos</a></li>
+            <li><a href="#faq" class="footer-link">Preguntas Frecuentes</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <strong>Aviso Importante:</strong> PediaTrack no suministra atención médica de urgencia, ni calcula dosis automáticas, ni sustituye el consejo o diagnóstico de un profesional de la salud matriculado. Ante una emergencia médica, acudir inmediatamente a la guardia hospitalaria más cercana.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================================
+       BARRA FLOTANTE MÓVIL
+       ================================================================ -->
+  <div class="mobile-sticky-cta">
+    <a href="encuesta.html" class="btn-mobile-sticky">
+      Solicitar Acceso a la Beta (90 seg) 🚀
+    </a>
+  </div>
+
+  <!-- ================================================================
+       INTERACCIÓN JAVASCRIPT
+       ================================================================ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabFamilias = document.getElementById('tabFamilias');
+      const tabMedicos = document.getElementById('tabMedicos');
+      const heroFamilias = document.getElementById('heroFamilias');
+      const heroMedicos = document.getElementById('heroMedicos');
+
+      if (tabFamilias && tabMedicos) {
+        tabFamilias.addEventListener('click', () => {
+          tabFamilias.classList.add('active');
+          tabFamilias.classList.remove('pro');
+          tabMedicos.classList.remove('active', 'pro');
+          heroFamilias.style.display = 'grid';
+          heroMedicos.style.display = 'none';
+        });
+
+        tabMedicos.addEventListener('click', () => {
+          tabMedicos.classList.add('active', 'pro');
+          tabFamilias.classList.remove('active');
+          heroFamilias.style.display = 'none';
+          heroMedicos.style.display = 'grid';
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

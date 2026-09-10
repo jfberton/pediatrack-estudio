@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PediaTrack — Solicitud a la Beta Privada</title>
+  <link rel="icon" type="image/x-icon" href="images/logo.ico" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="encuesta.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header con barra de progreso y navegación -->
+    <header class="app-header">
+      <div class="header-top-row">
+        <div class="header-nav-left">
+          <a href="index.html" class="btn-nav-action btn-nav-home" title="Volver al Inicio">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <span class="nav-text-desktop">Volver al Inicio</span>
+            <span class="nav-text-mobile">Inicio</span>
+          </a>
+          <button type="button" id="btnBack" class="btn-nav-action btn-nav-back" style="display: none;" title="Volver a la pregunta anterior">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <span>Anterior</span>
+          </button>
+        </div>
+        <a href="index.html" class="header-brand-logo" title="Ir a PediaTrack">
+          <img src="images/logo_nombre.png" alt="PediaTrack" class="header-logo-img" />
+        </a>
+        <div class="header-nav-right">
+          <span class="brand-beta-tag">🚀 Beta Privada</span>
+        </div>
+      </div>
+      <div class="progress-section">
+        <div class="progress-bar-container">
+          <div id="progressBar" class="progress-bar" style="width: 5%;"></div>
+        </div>
+        <div class="progress-meta-row">
+          <span class="progress-tag">Solicitud de Acceso</span>
+          <span id="stepIndicator" class="step-indicator">Progreso: 0%</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenedor principal de tarjetas -->
+    <main id="cardsContainer" class="cards-container">
+      
+      <!-- PANTALLA 0: Bienvenida y Selección de Rol -->
+      <section class="card active" id="step-0">
+        <div class="card-icon">🚀</div>
+        <h1 class="card-title">¿Nos ayudás con 90 segundos para darte acceso a la Beta Privada?</h1>
+        <p class="card-subtitle">
+          Estamos seleccionando a las primeras familias y pediatras para probar <strong>PediaTrack</strong>. Al completar este breve cuestionario asegurás tu lugar en la lista de espera con <strong>3 meses de Plan Familiar 100% gratis</strong>.
+        </p>
+        <div class="info-pill">
+          🎁 3 Meses de Plan Familiar gratis garantizados al registrarte.
+        </div>
+
+        <p class="question-label" style="margin-top: 24px;">Para comenzar, contanos:</p>
+        <div class="options-group">
+          <button type="button" class="btn-option role-btn" data-role="padre">
+            <span class="option-icon">👨‍👩‍👧</span>
+            <div class="option-text">
+              <strong>Soy Mamá, Papá o Cuidador</strong>
+              <span>Tengo a cargo el cuidado de uno o más niños</span>
+            </div>
+            <span class="option-arrow">→</span>
+          </button>
+
+          <button type="button" class="btn-option role-btn" data-role="profesional">
+            <span class="option-icon">🩺</span>
+            <div class="option-text">
+              <strong>Soy Pediatra o Profesional de la Salud</strong>
+              <span>Atiendo o acompaño a pacientes pediátricos</span>
+            </div>
+            <span class="option-arrow">→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- SECCIÓN PADRES -->
+      <div id="flow-padres" class="flow-wrapper" style="display: none;">
+        
+        <!-- P1: Frecuencia de tratamientos -->
+        <section class="card" id="step-p1">
+          <span class="step-badge">Pregunta 1</span>
+          <h2 class="card-title">En los últimos 3 meses, ¿tuviste que darle algún remedio a tu hijo por varios días seguidos?</h2>
+          <p class="card-subtitle">Por ejemplo: antibióticos, corticoides, broncodilatadores o nebulizaciones.</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option" data-key="frecuencia_tratamientos" data-has-treatment="true" data-val="Sí, 1 vez en estos 3 meses">
+              <span class="option-icon">💊</span>
+              <div class="option-text"><strong>Sí, 1 vez en estos 3 meses</strong><span>Cumplió un tratamiento agudo de varios días</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="frecuencia_tratamientos" data-has-treatment="true" data-val="Sí, 2 o más veces (recurrente)">
+              <span class="option-icon">🔄</span>
+              <div class="option-text"><strong>Sí, 2 o más veces</strong><span>Tratamientos recurrentes o afecciones frecuentes</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="frecuencia_tratamientos" data-has-treatment="false" data-val="No, solo cosas puntuales">
+              <span class="option-icon">🌡️</span>
+              <div class="option-text"><strong>No, solo cosas muy puntuales</strong><span>Algún antitérmico aislado por fiebre o dolor</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="frecuencia_tratamientos" data-has-treatment="false" data-val="Por suerte nada">
+              <span class="option-icon">🛡️</span>
+              <div class="option-text"><strong>Por suerte nada</strong><span>No tomó medicamentos en este período</span></div>
+            </button>
+          </div>
+        </section>
+
+        <!-- P2: Cantidad de cuidadores -->
+        <section class="card" id="step-p2">
+          <span class="step-badge">Pregunta 2</span>
+          <h2 class="card-title">En casa, ¿cuántos adultos se reparten la tarea de darle los remedios o llevar el control?</h2>
+          <p class="card-subtitle">Pensá en quienes conviven, alternan turnos, abuelos o niñeras.</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option" data-key="cantidad_cuidadores" data-val="1">
+              <span class="option-icon">👤</span>
+              <div class="option-text"><strong>Solo yo (1 persona)</strong><span>Llevo la responsabilidad casi total</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="cantidad_cuidadores" data-val="2">
+              <span class="option-icon">👥</span>
+              <div class="option-text"><strong>2 personas</strong><span>Mamá y papá / pareja alternada</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="cantidad_cuidadores" data-val="3+">
+              <span class="option-icon">👨‍👩‍👧‍👦</span>
+              <div class="option-text"><strong>3 o más personas</strong><span>Incluye abuelos, tíos, niñera o cuidadores</span></div>
+            </button>
+          </div>
+        </section>
+
+        <!-- P3: Duda o cansancio de dosis -->
+        <section class="card" id="step-p3">
+          <span class="step-badge">Pregunta 3</span>
+          <h2 class="card-title" id="p3Title">¿Alguna vez te pasó no saber con certeza si ya se le había dado una dosis o dudar del horario?</h2>
+          <p class="card-subtitle" id="p3Subtitle">Ese momento típico de: <em>"¿Se lo diste vos o se lo doy yo?"</em> o miedo a duplicar.</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option" data-key="duda_dosis" data-val="Nos pasa casi siempre">
+              <span class="option-icon">⚠️</span>
+              <div class="option-text"><strong>Nos pasa casi siempre</strong><span>Es motivo habitual de consultas, dudas o discusiones</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="duda_dosis" data-val="Nos pasó alguna vez">
+              <span class="option-icon">🤔</span>
+              <div class="option-text"><strong>Nos pasó alguna vez con bastante estrés</strong><span>Pudimos resolverlo pero pasamos un mal momento</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="duda_dosis" data-val="Nunca">
+              <span class="option-icon">🛡️</span>
+              <div class="option-text"><strong>Nunca</strong><span>Siempre tenemos control perfecto</span></div>
+            </button>
+          </div>
+        </section>
+
+        <!-- P4: Sistema actual de coordinación (Selección múltiple) -->
+        <section class="card" id="step-p4">
+          <span class="step-badge">Pregunta 4</span>
+          <span class="multi-instructions">👉 Podés elegir una o varias opciones</span>
+          <h2 class="card-title">¿Cómo se avisan o coordinan hoy los horarios y dosis?</h2>
+          <p class="card-subtitle">Marcá todos los métodos que suelen usar en el día a día:</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option multi-option" data-key="sistema_actual" data-val="Mensajes de WhatsApp">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">💬</span>
+              <div class="option-text"><strong>Mensajes de WhatsApp</strong><span>"Avisame cuando le des", audios, etc.</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="sistema_actual" data-val="Papel en la heladera o anotador">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">📝</span>
+              <div class="option-text"><strong>Papel en la heladera o anotador</strong><span>Vamos tachando los horarios</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="sistema_actual" data-val="Alarmas en mi celular">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">⏰</span>
+              <div class="option-text"><strong>Alarmas en mi celular</strong><span>Alarma común en el teléfono de uno solo</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="sistema_actual" data-val="App compartida">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">📱</span>
+              <div class="option-text"><strong>Usamos una app compartida</strong><span>Google Calendar, notas compartidas o similar</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="sistema_actual" data-val="De memoria / mentalmente">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">🧠</span>
+              <div class="option-text"><strong>De memoria / mentalmente</strong><span>Nos acordamos en el momento</span></div>
+            </button>
+          </div>
+
+          <div class="multi-actions">
+            <button type="button" class="btn-primary btn-next-multi" data-target-key="sistema_actual">Continuar →</button>
+          </div>
+        </section>
+
+        <!-- P-GUARDIA: Dificultad en guardia (Selección múltiple) -->
+        <section class="card" id="step-p-guardia">
+          <span class="step-badge">Pregunta 5</span>
+          <span class="multi-instructions">👉 Podés elegir una o varias opciones</span>
+          <h2 class="card-title">En una guardia o consulta de urgencia: ¿qué dato te costó más recordar o precisar al médico?</h2>
+          <p class="card-subtitle">Ese momento de tensión cuando preguntan en el triage y los cuidadores dudan:</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option multi-option" data-key="dificultad_guardia" data-val="Hora exacta del último antitérmico">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">⏰</span>
+              <div class="option-text"><strong>La hora exacta del último antitérmico</strong><span>Paracetamol, ibuprofeno o dipirona</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="dificultad_guardia" data-val="Peso exacto reciente del chico">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">⚖️</span>
+              <div class="option-text"><strong>El peso exacto reciente</strong><span>Para que calculen la dosis milimétrica</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="dificultad_guardia" data-val="Medicación previa tomada o alergias">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">📋</span>
+              <div class="option-text"><strong>Qué medicación venía tomando o alergias</strong><span>Esquemas previos o antecedentes</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-exclusive="true" data-key="dificultad_guardia" data-val="Ninguno, suelo tener todo claro">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">🧘</span>
+              <div class="option-text"><strong>Ninguno, suelo tener todo claro</strong><span>Tengo la información precisa al momento</span></div>
+            </button>
+          </div>
+
+          <div class="multi-actions">
+            <button type="button" class="btn-primary btn-next-multi" data-target-key="dificultad_guardia">Continuar →</button>
+          </div>
+        </section>
+
+        <!-- P-DOCS-TIPOS: Tipos de documentos guardados (Selección múltiple) -->
+        <section class="card" id="step-p-docs-tipos">
+          <span class="step-badge">Pregunta 6</span>
+          <span class="multi-instructions">👉 Podés elegir una o varias opciones</span>
+          <h2 class="card-title">¿Qué tipo de documentos médicos solés tener que guardar o consultar de tus hijos?</h2>
+          <p class="card-subtitle">Marcá todos los que suelas tener en tu teléfono o en casa:</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option multi-option" data-key="tipos_documentos_guardados" data-val="Fotos de recetas médicas">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">💊</span>
+              <div class="option-text"><strong>Fotos de recetas médicas</strong><span>Para farmacia o para recordar las indicaciones exactas</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="tipos_documentos_guardados" data-val="PDFs o análisis de laboratorio">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">📄</span>
+              <div class="option-text"><strong>PDFs o estudios de laboratorio</strong><span>Análisis de sangre, orina, radiografías, etc.</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="tipos_documentos_guardados" data-val="Carnet de vacunación">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">💉</span>
+              <div class="option-text"><strong>Carnet de vacunación</strong><span>Para controles o para presentar en inscripciones</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="tipos_documentos_guardados" data-val="Certificados escolares / Apto físico">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">🏫</span>
+              <div class="option-text"><strong>Certificados y apto físico</strong><span>Para el colegio, jardín o actividades deportivas</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="tipos_documentos_guardados" data-val="Fotos de síntomas">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">📸</span>
+              <div class="option-text"><strong>Fotos de síntomas</strong><span>Ronchas, erupciones, fiebre o golpes para mostrar al médico</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-exclusive="true" data-key="tipos_documentos_guardados" data-val="Casi nunca guardo documentos">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">⚪</span>
+              <div class="option-text"><strong>Casi nunca guardo documentos</strong><span>No suelo conservar registros médicos</span></div>
+            </button>
+          </div>
+
+          <div class="multi-actions">
+            <button type="button" class="btn-primary btn-next-multi" data-target-key="tipos_documentos_guardados">Continuar →</button>
+          </div>
+        </section>
+
+        <!-- P-DOCS-DESORDEN: Dónde quedan y qué dificultades generan (Selección múltiple) -->
+        <section class="card" id="step-p-docs-desorden">
+          <span class="step-badge">Pregunta 7</span>
+          <span class="multi-instructions">👉 Podés elegir una o varias opciones</span>
+          <h2 class="card-title">¿Dónde suelen quedar y qué dificultades te genera al buscarlos?</h2>
+          <p class="card-subtitle">Marcá todas las situaciones que te resulten familiares:</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option multi-option" data-key="desorden_documentos" data-val="Perdidos en la galería del celular">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">📷</span>
+              <div class="option-text"><strong>Perdidos en la galería del celular</strong><span>Mezclados entre miles de fotos cotidianas</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="desorden_documentos" data-val="En chats de WhatsApp difíciles de encontrar">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">💬</span>
+              <div class="option-text"><strong>En chats de WhatsApp</strong><span>Sé que me los pasaron, pero tardo un montón en encontrarlos</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="desorden_documentos" data-val="En papel en casa que olvido llevar">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">📁</span>
+              <div class="option-text"><strong>En papel en casa</strong><span>Cuando voy a una guardia o de viaje no los tengo encima</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="desorden_documentos" data-val="Perdí recetas/estudios y tuve que pedir de nuevo">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">🤦</span>
+              <div class="option-text"><strong>Me pasó de perder un estudio o receta</strong><span>Y tener que pedirle otro al pediatra</span></div>
+            </button>
+            <button type="button" class="btn-option multi-option" data-key="desorden_documentos" data-val="Tengo carpeta en la nube bien organizada">
+              <span class="multi-checkbox"></span>
+              <span class="option-icon">☁️</span>
+              <div class="option-text"><strong>Tengo una nube bien organizada</strong><span>Drive, Dropbox o carpetas digitales al día</span></div>
+            </button>
+          </div>
+
+          <div class="multi-actions">
+            <button type="button" class="btn-primary btn-next-multi" data-target-key="desorden_documentos">Continuar →</button>
+          </div>
+        </section>
+
+        <!-- P5: Pregunta Abierta con TEXTO O AUDIO -->
+        <section class="card" id="step-p5">
+          <span class="step-badge">Pregunta 8 (Experiencia real)</span>
+          <h2 class="card-title">En 1 frase o detalle: contanos qué fue lo más difícil de coordinar la última vez</h2>
+          <p class="card-subtitle">
+            Cuando tu hijo tomó remedios o tuvieron que consultar de urgencia: ¿qué generó dudas, roces o corridas?
+          </p>
+
+          <div class="open-response-box">
+            <textarea id="textResponse-p" class="text-input" placeholder="Ej: No sabíamos a qué hora le tocaba el antitérmico y nos olvidamos de anotarlo..." rows="3"></textarea>
+
+            <div class="voice-alternative-divider">
+              <span>o si preferís no escribir</span>
+            </div>
+
+            <div class="recorder-controls">
+              <button type="button" class="record-trigger-btn" id="recordBtn-p">
+                <span class="record-dot"></span>
+                <span id="recordText-p">🎙️ Grabar nota de voz (hasta 60 seg)</span>
+              </button>
+              <div class="timer-display" id="recordTimer-p" style="display:none;">00:00</div>
+            </div>
+            
+            <div class="audio-preview-box" id="audioPreview-p" style="display: none;">
+              <audio id="audioPlayer-p" controls></audio>
+              <button type="button" class="btn-retry" id="retryAudio-p">↺ Grabar de nuevo</button>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <button type="button" class="btn-primary" id="btnNext-p5">Continuar →</button>
+          </div>
+        </section>
+
+        <!-- P6: Desconfianza / Privacidad -->
+        <section class="card" id="step-p6">
+          <span class="step-badge">Pregunta 9</span>
+          <h2 class="card-title">¿Qué te daría desconfianza de usar una aplicación para la salud de tu hijo?</h2>
+          <p class="card-subtitle">Tu sinceridad nos permite construir una solución segura y ética.</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option" data-key="desconfianza" data-val="Privacidad de datos médicos">
+              <span class="option-icon">🔒</span>
+              <div class="option-text"><strong>Privacidad y seguridad</strong><span>Que mis datos o fotos médicas se filtren</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="desconfianza" data-val="Que sea complicada o lenta">
+              <span class="option-icon">⌛</span>
+              <div class="option-text"><strong>Que sea pesada o difícil de usar</strong><span>En medio de una fiebre necesito algo ya</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="desconfianza" data-val="Que el otro cuidador no la use">
+              <span class="option-icon">🙅</span>
+              <div class="option-text"><strong>Que el resto no la use</strong><span>Si la uso solo yo, no resuelve el problema</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="desconfianza" data-val="Ninguna si es útil">
+              <span class="option-icon">👍</span>
+              <div class="option-text"><strong>Ninguna particular</strong><span>Si es confiable y útil, la usaría con gusto</span></div>
+            </button>
+          </div>
+        </section>
+
+        <!-- P-MODELO: Adopción y Utilidad real -->
+        <section class="card" id="step-p-modelo">
+          <span class="step-badge">Pregunta 10</span>
+          <h2 class="card-title">Si PediaTrack estuviera disponible hoy, ¿cómo la usarías en tu familia?</h2>
+          <p class="card-subtitle">Queremos entender en qué momento te resultaría verdaderamente útil:</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option" data-key="disposicion_uso" data-val="La usaría hoy mismo para organizar a la familia">
+              <span class="option-icon">🚀</span>
+              <div class="option-text"><strong>La usaría hoy mismo</strong><span>Para tener ordenados remedios, vacunas y recetas en casa</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="disposicion_uso" data-val="Solo en tratamientos largos o si se enferma">
+              <span class="option-icon">🤒</span>
+              <div class="option-text"><strong>Solo en crisis o tratamientos largos</strong><span>La instalaría puntualmente ante una bronquiolitis, otitis o fiebre</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="disposicion_uso" data-val="Si mi pediatra me la pide o recomienda">
+              <span class="option-icon">🩺</span>
+              <div class="option-text"><strong>Si el pediatra me la pide</strong><span>Si el médico me pide ver el registro o resumen de tomas</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="disposicion_uso" data-val="No creo necesitar una app para esto">
+              <span class="option-icon">⚪</span>
+              <div class="option-text"><strong>No creo necesitarla</strong><span>Nos arreglamos bien con los métodos que usamos hoy</span></div>
+            </button>
+          </div>
+        </section>
+
+        <!-- P7: The Mom Test CTA - Beta Privada -->
+        <section class="card" id="step-p7">
+          <div class="card-icon">🚀</div>
+          <span class="step-badge highlight-badge">Paso Final</span>
+          <h2 class="card-title">Estamos armando una Beta Privada con 30 familias</h2>
+          <p class="card-subtitle">
+            PediaTrack sincroniza las tomas en tiempo real entre los celulares de los cuidadores (para que cuando uno marque "Dosis dada", el otro lo sepa al instante).
+          </p>
+          <div class="benefit-box">
+            <ul>
+              <li>✅ Acceso 100% gratuito a la versión completa</li>
+              <li>✅ Sin publicidad y con soporte directo de los desarrolladores</li>
+              <li>✅ Alarma que suena en ambos teléfonos sin desajustarse</li>
+            </ul>
+          </div>
+
+          <p class="question-label">¿Te gustaría tener acceso prioritario para tu familia?</p>
+          <div class="options-group">
+            <button type="button" class="btn-option" data-key="quiere_beta" data-val="Sí, me interesa">
+              <span class="option-icon">🎉</span>
+              <div class="option-text"><strong>¡Sí, me gustaría probarla!</strong><span>Avisame cuando esté disponible</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="quiere_beta" data-val="Por ahora no">
+              <span class="option-icon">👋</span>
+              <div class="option-text"><strong>Por ahora no</strong><span>Prefiero solo responder esta encuesta</span></div>
+            </button>
+          </div>
+
+          <!-- Campos de contacto condicionales -->
+          <div id="contactFields-p" class="contact-box" style="display: none;">
+            <label for="contactName-p">Tu nombre o apodo:</label>
+            <input type="text" id="contactName-p" class="text-input" placeholder="Ej: Laura" />
+
+            <label for="contactWa-p">Tu WhatsApp (para enviarte la invitación):</label>
+            <input type="tel" id="contactWa-p" class="text-input" placeholder="Ej: 11 2345-6789" />
+
+            <label for="contactEmail-p">Tu Email (opcional, para enviarte novedades):</label>
+            <input type="email" id="contactEmail-p" class="text-input" placeholder="Ej: laura@gmail.com" />
+
+            <button type="button" class="btn-submit" id="btnSubmit-p">Finalizar y Enviar Respuestas ✨</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- SECCIÓN PROFESIONALES -->
+      <div id="flow-profesionales" class="flow-wrapper" style="display: none;">
+        
+        <!-- M1: Frecuencia de dudas de dosis -->
+        <section class="card" id="step-m1">
+          <span class="step-badge">Pregunta 1 (Profesional)</span>
+          <h2 class="card-title">En tu consulta o guardia, ¿con qué frecuencia recibís dudas sobre dosis ya administradas u horarios erróneos?</h2>
+          <p class="card-subtitle">Padres angustiados porque no saben si el otro le dio la medicación o si duplicaron.</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option" data-key="frecuencia_dudas_profesional" data-val="A diario">
+              <span class="option-icon">🔴</span>
+              <div class="option-text"><strong>Casi a diario</strong><span>Es una de las consultas y fuentes de ansiedad más comunes</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="frecuencia_dudas_profesional" data-val="Semanalmente">
+              <span class="option-icon">🟠</span>
+              <div class="option-text"><strong>Semanalmente</strong><span>Ocurre con cierta regularidad en tratamientos de varios días</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="frecuencia_dudas_profesional" data-val="Rara vez">
+              <span class="option-icon">🟢</span>
+              <div class="option-text"><strong>Rara vez</strong><span>Casi nunca me toca ver confusiones de este tipo</span></div>
+            </button>
+          </div>
+        </section>
+
+        <!-- M-DATOS: Datos faltantes en guardia/consulta -->
+        <section class="card" id="step-m-datos">
+          <span class="step-badge">Pregunta 2 (Profesional)</span>
+          <h2 class="card-title">Cuando una familia llega a la guardia o a tu consulta por urgencia, ¿qué dato es el que más les cuesta precisar?</h2>
+          <p class="card-subtitle">Información crítica para definir conducta médica en el momento.</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option" data-key="dato_critico_faltante_profesional" data-val="Horario y dosis de último antitérmico/antibiótico">
+              <span class="option-icon">⏰</span>
+              <div class="option-text"><strong>Horario y dosis exacta</strong><span>De antitérmicos o antibióticos en las últimas 24 hs</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="dato_critico_faltante_profesional" data-val="Peso exacto reciente">
+              <span class="option-icon">⚖️</span>
+              <div class="option-text"><strong>Peso reciente del paciente</strong><span>Fundamental para calcular dosis correctas</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="dato_critico_faltante_profesional" data-val="Medicación previa o alergias">
+              <span class="option-icon">📋</span>
+              <div class="option-text"><strong>Antecedentes y alergias</strong><span>Qué remedios venía tomando o si es alérgico</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="dato_critico_faltante_profesional" data-val="Todas las anteriores">
+              <span class="option-icon">🩺</span>
+              <div class="option-text"><strong>Todas las anteriores</strong><span>Suele haber desorden general en situaciones de estrés</span></div>
+            </button>
+          </div>
+        </section>
+
+        <!-- M2: Fricción en WhatsApp -->
+        <section class="card" id="step-m2">
+          <span class="step-badge">Pregunta 3 (Profesional)</span>
+          <h2 class="card-title">¿Qué es lo que más te satura o incomoda de recibir consultas por WhatsApp personal?</h2>
+          <p class="card-subtitle">Elegí el punto que más afecta tu tranquilidad o tu práctica:</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option" data-key="friccion_whatsapp" data-val="Audios y fotos sueltas sin orden">
+              <span class="option-icon">📁</span>
+              <div class="option-text"><strong>Desorden de información</strong><span>Fotos de recetas torcidas, audios largos y análisis sueltos</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="friccion_whatsapp" data-val="Expectativa de atención de guardia 24/7">
+              <span class="option-icon">🚨</span>
+              <div class="option-text"><strong>Expectativa de urgencia</strong><span>Familias que esperan respuesta instantánea a deshoras</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="friccion_whatsapp" data-val="Falta de contexto previo">
+              <span class="option-icon">❓</span>
+              <div class="option-text"><strong>Falta de contexto</strong><span>No recordar exactamente qué dosis o esquema se indicó</span></div>
+            </button>
+          </div>
+        </section>
+
+        <!-- M3: Pregunta Abierta Profesional con TEXTO O AUDIO -->
+        <section class="card" id="step-m3">
+          <span class="step-badge">Pregunta 4 (Profesional)</span>
+          <h2 class="card-title">En 1 frase o detalle: contanos un caso reciente de confusión que hayas visto</h2>
+          <p class="card-subtitle">
+            ¿Qué desorden o duda de los padres te complicó más la atención médica o el control del tratamiento?
+          </p>
+
+          <div class="open-response-box">
+            <textarea id="textResponse-m" class="text-input" placeholder="Ej: Padres que dieron doble antitérmico porque no coordinaron entre ellos..." rows="3"></textarea>
+
+            <div class="voice-alternative-divider">
+              <span>o si preferís no escribir</span>
+            </div>
+
+            <div class="recorder-controls">
+              <button type="button" class="record-trigger-btn" id="recordBtn-m">
+                <span class="record-dot"></span>
+                <span id="recordText-m">🎙️ Grabar nota de voz (hasta 60 seg)</span>
+              </button>
+              <div class="timer-display" id="recordTimer-m" style="display:none;">00:00</div>
+            </div>
+            
+            <div class="audio-preview-box" id="audioPreview-m" style="display: none;">
+              <audio id="audioPlayer-m" controls></audio>
+              <button type="button" class="btn-retry" id="retryAudio-m">↺ Grabar de nuevo</button>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <button type="button" class="btn-primary" id="btnNext-m3">Continuar →</button>
+          </div>
+        </section>
+
+        <!-- M4: Resumen compartido -->
+        <section class="card" id="step-m4">
+          <span class="step-badge">Pregunta 5 (Profesional)</span>
+          <h2 class="card-title">Si la familia te compartiera un resumen temporal (web segura o PDF) con las dosis reales dadas antes de entrar a consulta, ¿te serviría?</h2>
+          <p class="card-subtitle">Sin que vos tengas que responder mensajes en tiempo real ni controlar alarmas.</p>
+          
+          <div class="options-group">
+            <button type="button" class="btn-option" data-key="utilidad_resumen" data-val="Muy útil">
+              <span class="option-icon">⭐</span>
+              <div class="option-text"><strong>Muy útil</strong><span>Ahorraría minutos valiosos de anamnesis en consulta</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="utilidad_resumen" data-val="Depende del formato">
+              <span class="option-icon">⚖️</span>
+              <div class="option-text"><strong>Depende</strong><span>Solo si es muy conciso y se lee en 15 segundos</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="utilidad_resumen" data-val="No lo usaría">
+              <span class="option-icon">❌</span>
+              <div class="option-text"><strong>No creo usarlo</strong><span>Prefiero preguntar todo en el momento</span></div>
+            </button>
+          </div>
+        </section>
+
+        <!-- M5: Alianza Profesional CTA -->
+        <section class="card" id="step-m5">
+          <div class="card-icon">🤝</div>
+          <span class="step-badge highlight-badge">Paso Final</span>
+          <h2 class="card-title">¿Te gustaría probar un código exclusivo para 5 familias de tus pacientes?</h2>
+          <p class="card-subtitle">
+            Estamos creando un programa gratuito para pediatras aliados: les damos un código para que sus pacientes accedan a PediaTrack y puedan enviarte resúmenes ordenados cuando lo necesites.
+          </p>
+
+          <div class="options-group">
+            <button type="button" class="btn-option" data-key="quiere_alianza" data-val="Sí, me interesa">
+              <span class="option-icon">✨</span>
+              <div class="option-text"><strong>Sí, me interesa probar con mis pacientes</strong><span>Contactame para coordinar</span></div>
+            </button>
+            <button type="button" class="btn-option" data-key="quiere_alianza" data-val="Más adelante">
+              <span class="option-icon">🕐</span>
+              <div class="option-text"><strong>Podría ser más adelante</strong><span>Prefiero ver cómo avanza primero</span></div>
+            </button>
+          </div>
+
+          <!-- Contacto profesional -->
+          <div id="contactFields-m" class="contact-box" style="display: none;">
+            <label for="contactName-m">Tu Nombre y Especialidad:</label>
+            <input type="text" id="contactName-m" class="text-input" placeholder="Ej: Dr. Martín Gómez - Pediatra" />
+
+            <label for="contactWa-m">Tu WhatsApp (para enviarte el código):</label>
+            <input type="tel" id="contactWa-m" class="text-input" placeholder="Ej: 11 9876-5432" />
+
+            <label for="contactEmail-m">Tu Email:</label>
+            <input type="email" id="contactEmail-m" class="text-input" placeholder="Ej: martin@gmail.com" />
+
+            <button type="button" class="btn-submit" id="btnSubmit-m">Finalizar y Enviar Aportes 🩺</button>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- PANTALLA FINAL: Agradecimiento y Compartir -->
+      <section class="card" id="step-gracias" style="display: none;">
+        <div class="card-icon success-anim">🎉</div>
+        <h1 class="card-title">¡Solicitud recibida con éxito!</h1>
+        <p class="card-subtitle" id="graciasSubtitle">
+          Registramos tus respuestas y reservamos tu lugar en la lista de espera para la <strong>Beta Privada</strong> con <strong>3 meses gratis del Plan Familiar</strong>. Te contactaremos en cuanto abramos los primeros cupos.
+        </p>
+        
+        <div class="share-box">
+          <p><strong>¿Conocés a otros padres o pediatras a quienes les pueda servir?</strong></p>
+          <p class="share-desc">Compartir este link nos ayuda un montón a sumar familias aliadas:</p>
+          <a id="btnShareWa" class="btn-whatsapp" href="#" target="_blank">
+            <span>📲 Compartir por WhatsApp</span>
+          </a>
+          <a href="index.html" class="btn-back-home">
+            ← Volver a la página principal
+          </a>
+        </div>
+
+        <div class="footer-note">
+          <p>🔒 Datos resguardados exclusivamente con fines de investigación y acceso prioritario a la beta.</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
